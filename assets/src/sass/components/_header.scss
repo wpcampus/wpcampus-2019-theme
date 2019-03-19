@@ -1,0 +1,424 @@
+html.wpc-menu-open,
+html.wpc-menu-open body {
+
+	@media #{$header-menu-bp-closed} {
+		width: 100%;
+		height: 100%;
+		overflow: scroll;
+	}
+}
+
+#wpc-header {
+	background: $header-bg;
+	padding: $header-padding-vert $header-padding-horiz;
+	color: $header-color;
+	position: relative;
+	overflow: visible;
+	z-index: 1;
+
+	* {
+		color: inherit;
+	}
+
+	.wpc-logo {
+
+		a {
+			display: block;
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+			margin: 0;
+		}
+	}
+
+	.wpc-menu {
+		display: none;
+		
+		a {
+			display: block;
+			text-decoration: none;
+		}
+
+		ul {
+			@include reset-ul();
+			font-size: 18px;
+			line-height: 1;
+			font-weight: 300;
+			text-transform: uppercase;
+
+			li {
+				&:hover,
+				&:focus {
+					z-index: 100;
+				}
+			}
+
+			li.current-menu-item > a,
+			a:hover,
+			a:focus {
+				background: darken( $wpc-royal-blue, 10% );
+			}
+
+			&.sub-menu {
+				li.current-menu-item > a,
+				a:hover,
+				a:focus {
+					background: darken( $wpc-royal-blue, 10% );
+				}
+			}
+		}
+	}
+
+	.social-media-icons {
+		display: none;
+	}
+
+	&:before {
+		content: '';
+		background: url('../../images/wpcampus-2018-skyline.png') left -12px no-repeat;
+		background-size: auto 118%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.15;
+		z-index: -1;
+		pointer-events: none;
+	}
+
+	.wpc-toggle-menu {
+		display: block;
+		background: darken( $wpc-royal-blue, 10% );
+		border: 0;
+		margin: 20px 0 0 0;
+		padding: 0;
+		font-size: 1.3rem;
+		font-weight: 300;
+		height: 45px;
+		line-height: 45px;
+		text-transform: uppercase;
+		
+		.wpc-toggle-bar {
+			display: none;
+		}
+
+		&:hover,
+		&:focus {
+			background: $wpc-dark-blue;
+		}
+	}
+
+	@media #{$header-menu-bp-closed} {
+
+		&.wpc-menu-open {
+			position: fixed;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 10000;
+			overflow: scroll;
+
+			.wpc-menu {
+				display: block;
+
+				a {
+					padding: 8px 5px;
+				}
+
+				ul {
+					font-size: 2rem;
+					line-height: 1.4;
+
+					li {
+						display: block;
+						clear: both;
+						margin: 5px 0 0 0;
+
+						/*&.highlight {
+							background: $header-menu-open-highlight-bg;
+							color: $header-menu-open-highlight-color;
+							margin-top: $header-menu-open-highlight-margin-top;
+
+							a {
+								padding: $header-menu-open-highlight-padding-vert $header-menu-open-highlight-padding-horiz;
+							}
+						}*/
+					}
+
+					ul {
+
+						&.sub-menu {
+							padding: 0 0 0 20px;
+							//font-size: 1.5rem;
+							//font-weight: 300;
+							//text-transform: uppercase;
+						}
+					}
+				}
+			}
+
+			.social-media-icons {
+				display: flex;
+				justify-content: flex-start;
+				margin: 30px 0 0;
+				padding: 0;
+				border: 0;
+				text-align: center;
+				overflow: visible;
+
+				li {
+					display: block;
+					float: left;
+					list-style: none;
+					margin: 0 18px 0 0;
+					padding: 0;
+				}
+
+				svg {
+					width: auto;
+					height: 35px;
+					vertical-align: baseline;
+					fill: #fff;
+				}
+
+				a {
+					display: block;
+					height: 35px;
+				}
+			}
+
+			.wpc-logo {
+				margin: 0 0 22px 0;
+				padding: 0 ( $wpc-toggle-bar-total-width + 50px ) 0 0;
+			}
+
+			.wpc-toggle-menu {
+				background: transparent;
+				position: fixed;
+				right: $header-padding-horiz;
+				top: $header-padding-vert;
+				width: $wpc-toggle-bar-total-width;
+				height: $wpc-toggle-bar-total-width;
+				line-height: $wpc-toggle-bar-total-width;
+
+				.wpc-open-menu-label {
+					display: none;
+				}
+
+				.wpc-toggle-bar {
+					display: block;
+					background: $wpc-toggle-bar-bg;
+					width: 100%;
+					height: $wpc-toggle-bar-height;
+					position: absolute;
+					left: 0;
+					top: 40%;
+					transform: rotate(45deg);
+
+					&:before {
+						content: '';
+						background: $wpc-toggle-bar-bg;
+						width: 100%;
+						height: $wpc-toggle-bar-height;
+						position: absolute;
+						left: 0;
+						top: 0;
+						transform: rotate(90deg);
+					}
+				}
+
+				&:hover,
+				&:focus {
+					background: transparent;
+				}
+			}
+		}
+	}
+
+	@media #{$header-menu-bp-open} {
+
+		.wpc-logo {
+			width: $header-logo-container-width + ($header-logo-container-padding-horiz * 2);
+			height: $header-logo-height;
+			margin: 0 auto 20px auto;
+
+			a {
+				width: $header-logo-width;
+				margin: 0 auto;
+			}
+
+			img {
+				width: $header-logo-width;
+				height: $header-logo-height;
+				margin: 0 auto;
+			}
+		}
+
+		.wpc-menu {
+			display: inline-block;
+
+			a {
+				padding: 3px $header-menu-item-padding;
+			}
+
+			ul {
+				display: flex;
+				align-items: center;
+				font-size: 18px;
+				line-height: 26px;
+
+				&.sub-menu {
+					display: none;
+					position: absolute;
+					left: 0;
+					top: 100%;
+					height: auto;
+					min-width: 100%;
+					margin: 0;
+					padding: 0;
+					background: #fff;
+					color: $body-font-color;
+					text-align: left;
+
+					li {
+						margin: 0;
+					}
+				}
+
+				li {
+					margin: 0 0 0 $header-menu-padding;
+					position: relative;
+					
+					&:hover,
+					&:focus {
+						
+						.sub-menu {
+							display: block;
+						}
+					}
+				}
+
+				li.current-page-ancestor > a,
+				li.current-menu-parent > a,
+				li.current-menu-item > a,
+				a:hover,
+				a:focus {
+					background: darken( $wpc-royal-blue, 10% );
+				}
+
+				&.sub-menu {
+					li.current-menu-item > a,
+					a:hover,
+					a:focus {
+						background: rgba( #000, 0.05 );
+					}
+				}
+			}
+
+			&.wpc-menu-2 {
+
+				ul {
+
+					li {
+						margin: 0 $header-menu-padding 0 0;
+					}
+				}
+			}
+		}
+
+		.wpc-toggle-menu {
+			display: none;
+		}
+
+		.wpc-container {
+			text-align: center;
+		}
+	}
+
+	@media #{$header-menu-bp-wide-open} {
+
+		.wpc-logo {
+			order: 2;
+			margin: 0;
+		}
+
+		.wpc-menu {
+			display: block;
+			align-content: center;
+			justify-content: center;
+			flex-grow: 1;
+			order: 1;
+			text-align: right;
+			padding: 0 15px 0 0;
+
+			ul {
+				justify-content: flex-end;
+				height: $header-logo-height;
+			}
+
+			&.wpc-menu-2 {
+				order: 3;
+				text-align: left;
+				padding: 0 0 0 15px;
+
+				ul {
+					justify-content: flex-start;
+				}
+			}
+		}
+
+		.wpc-container {
+			display: flex;
+			//flex-wrap: wrap;
+			align-content: center;
+			justify-content: center;
+			align-items: stretch;
+		}
+	}
+}
+
+#wpc-header-actions {
+	background: $wpc-dark-blue;
+	padding: 5px;
+
+	a {
+		text-decoration: none;
+	}
+
+	strong {
+		font-weight: 600;
+	}
+
+	.highlight-button {
+		background: #900;
+		color: #fff;
+		padding: 2px 5px;
+		margin: 0 2px;
+	}
+
+	.wpc-header-action {
+		display: block;
+		height: auto;
+		min-height: 40px;
+		background: $wpc-dark-blue;
+		color: #fff;
+		font-size: 1rem;
+		line-height: 1.6;
+		font-weight: 300;
+		text-decoration: none;
+		text-align: center;
+		padding: 5px 15px;
+
+		&:hover {
+
+			.highlight-button {
+				text-decoration: underline;
+			}
+		}
+	}
+}

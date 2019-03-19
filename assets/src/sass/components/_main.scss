@@ -1,0 +1,386 @@
+#wpc-content {
+
+	.wpcampus-login-form {
+		background: rgba($wpc-royal-blue,0.05);
+		padding: 20px;
+		border-radius: 5px;
+	}
+
+	.wpc-mc-signup {
+		margin: 2.5rem 0 1rem 0;
+	}
+
+	.wpc-livestream-sponsors {
+
+		img {
+			margin: 0;
+		}
+
+		@media #{$wpc-container-max-width-bp} {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: $element-margin-vert 0;
+
+			.wpc-livestream-sponsor {
+				flex: 1;
+				width: 50%;
+				padding: 0 10px;
+
+				&:first-child {
+					padding-left: 0;
+				}
+
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+
+	#wpc-crowdcast {
+		margin: 1em 0;
+
+		iframe {
+			display: block;
+			width: 100%;
+			height: 450px;
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+
+		@media #{$wpc-container-max-width-bp} {
+			iframe {
+				height: 600px;
+			}
+		}
+	}
+
+	.conf-sch-container {
+
+		h2.schedule-header {
+			text-transform: uppercase;
+			font-weight: 500;
+			font-size: 1.7rem;
+			line-height: 1.3;
+		}
+	}
+
+	#wpc-crowdcast-schedule {
+		margin: 2em 0;
+
+		.conf-sch-container {
+			clear: both;
+
+			.event-links {
+
+				.event-livestream {
+					//display: none;
+				}
+			}
+
+			.schedule-table {
+
+				.schedule-row {
+
+					/*&:not(.group):not(.session),
+					&.status-past {
+						display: none;
+					}*/
+				}
+			}
+
+			.schedule-by-day {
+
+				/*&.schedule-in-past:not(.schedule-in-progress):not(.schedule-in-future) {
+					display: none;
+				}
+
+				&:not(.group):not(.session) {
+					display: none;
+				}
+
+				&:not(.schedule-in-future) {
+
+					.schedule-header {
+						display: none;
+					}
+				}*/
+			}
+
+			.schedule-nav-buttons.nav-top {
+				display: none;
+			}
+
+			.schedule-side-buttons {
+
+				.schedule-video {
+					display: none;
+				}
+			}
+
+			@media screen and (min-width: 600px) {
+				.conference-schedule-container {
+
+					.schedule-nav-buttons {
+						margin: 1em 0;
+						padding-bottom: 1em;
+					}
+				}
+			}
+		}
+	}
+
+	.wpc-feedback-confirmation {
+		background: rgba($wpc-green-transp,0.05);
+		padding: 20px 25px;
+		text-align: center;
+
+		& + .button {
+			margin-top: 15px;
+		}
+	}
+
+	.panel {
+
+		&.wpc-feedback-notes-panel,
+		&.wpc-feedback-session-panel,
+		&.wpc-feedback-identifying-panel {
+			padding: 20px 25px;
+			border-radius: 5px;
+
+			h2 {
+				font-size: 1.8rem;
+				line-height: 1.2;
+				margin-bottom: 7px;
+
+				& + p {
+					margin-top: 0;
+				}
+			}
+
+			ul {
+
+				li {
+					margin: 3px 0 0 0;
+
+					&:first-child {
+						margin-top: 0;
+					}
+				}
+			}
+
+			& + button,
+			& + .button {
+				margin-top: -10px;
+			}
+		}
+
+		&.wpc-feedback-login-check {
+			padding: 10px 15px;
+			border-radius: 5px;
+
+			& + .panel {
+				margin-top: -.75rem;
+			}
+
+			&.wpc-attendees-logged-in {
+				background-color: $wpc-green;
+				background-image: url('../../images/checkmark-white.svg' );
+				background-position: 15px center;
+				background-repeat: no-repeat;
+				background-size: auto 20px;
+				padding-left: 47px;
+			}
+
+			&.wpc-attendees-not-logged-in {
+				background-color: $wpc-red;
+				background-image: url('../../images/x-white.svg' );
+				background-position: 15px center;
+				background-repeat: no-repeat;
+				background-size: auto 20px;
+				padding-left: 47px;
+			}
+		}
+
+		&.wpc-feedback-notes-panel {
+
+			& + .panel {
+				margin-top: -.75rem;
+			}
+
+			ul {
+				line-height: 1.5rem !important;
+				margin: 0 0 0 1.8rem !important;
+
+				li {
+					list-style: disc !important;
+				}
+
+				ul {
+					margin: 0.5rem 1.5rem 0.5rem !important;
+				}
+			}
+
+			h2 {
+				margin-bottom: 1rem;
+			}
+
+			& > ul > li > span {
+				font-size: 110%;
+				font-weight: bold;
+			}
+
+			&.wpc-attendees-logged-in {
+				background-color: $wpc-green-transp;
+			}
+
+			&.wpc-attendees-not-logged-in {
+				background-color: rgba( $wpc-red, 0.05 );
+			}
+		}
+
+		&.wpc-feedback-session-panel {
+
+			ul {
+				display: block;
+				margin: 0 !important;
+				font-size: 1.2rem;
+				line-height: 1.7;
+
+				li {
+					display: flex;
+					list-style: none !important;
+					margin: 5px 0 0 0;
+					
+					> span, > div {
+						display: block;
+
+						&.wpc-session-label {
+							width: 100px;
+							font-weight: bold;
+						}
+
+						&.wpc-session-value {
+							flex-grow: 1;
+						}
+					}
+
+					&:first-child {
+						margin-top: 0;
+					}
+				}
+			}
+		}
+
+		> * {
+
+			&:first-child {
+				margin-top: 0 !important;
+			}
+
+			&:last-child {
+				margin-bottom: 0 !important;
+			}
+		}
+	}
+
+	body.page-template-template-livestream & {
+
+		.wpc-page-title-container {
+			padding: 0;
+		}
+
+		.panel {
+			margin: 1em 0;
+		}
+
+		#wpc-content .wpc-breadcrumbs {
+			display: none;
+		}
+	}
+
+	body.page-watch & {
+
+		#wpc-videos {
+			margin-top: 1.5rem;
+		}
+	}
+}
+
+#wpc-main {
+
+	.gform_wrapper {
+
+		ul.gform_fields {
+
+			li.gfield {
+
+				&.wpc-question-panel {
+					background: $wpc-gray-transp;
+					padding: 25px;
+					border: 0;
+
+					h2 {
+						line-height: 2.1rem;
+					}
+
+					/*&.wpc-question-panel-header {
+						margin-bottom: 0;
+						padding-bottom: 20px;
+
+						.gsection_description {
+							margin-bottom: 0;
+						}
+					}*/
+
+					&.wpc-question-panel-question {
+						padding: 20px 25px;
+
+						.gfield_description * {
+							font-size: .875rem;
+						}
+
+						&.wpc-question-panel-error {
+							background: rgba(#700,0.07);
+
+							.gfield_label,
+							.ginput_container {
+								display: none;
+							}
+
+							.gfield_description {
+								margin: 0;
+								padding: 0;
+							}
+
+							p {
+								color: #900;
+								margin: 0;
+							}
+						}
+					}
+				}
+				
+				&.gfield_visibility_administrative {
+					display: none;
+				}
+			}
+		}
+	}
+}
+
+/*body.page-watch #wpc-main .wpc-container {
+	max-width: 1200px;
+}*/
+
+body.page-schedule-full.page-template-template-content-only,
+body.page-schedule-only.page-template-template-content-only,
+body.page-schedule.wpc-template-content-only {
+	padding: 20px;
+}
+
+body.page-template-template-session-survey {
+
+}
