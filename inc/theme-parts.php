@@ -38,7 +38,7 @@ function wpcampus_2019_print_header() {
 				endif;
 
 				?>
-				<img alt="<?php printf( esc_attr__( 'The %1$s 2019 conference, where %2$s meets higher education, will take place July 12-14, 2019 in St. Louis, Missouri.', 'wpcampus-2019' ), 'WPCampus', 'WordPress' ); ?>" src="<?php echo $wpcampus_dir; ?>assets/images/wpcampus-2019-logo.png">
+				<img alt="<?php printf( esc_attr__( 'The %1$s 2019 conference, where %2$s meets higher education, will take place July 25-27, 2019 in Portland, Oregon.', 'wpcampus-2019' ), 'WPCampus', 'WordPress' ); ?>" src="<?php echo $wpcampus_dir; ?>assets/images/wpcampus-2019-logo-white.png">
 			</a>
 		</div>
 		<button class="wpc-toggle-menu" data-toggle="wpc-header" aria-label="<?php _e( 'Toggle menu', 'wpcampus-2019' ); ?>">
