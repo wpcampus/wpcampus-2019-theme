@@ -91,7 +91,7 @@ function wpc_2019_add_livestream_template( $content ) {
 			?>
 			<div class="panel">
 				<p>All sessions from this year's event will be recorded and live streamed for free, sponsored by the amazing teams at <a href="https://campuspress.com/">CampusPress</a> and <a href="https://pantheon.io/">Pantheon</a>.</p>
-				<p>Return to this page during the event to watch, and follow along with, the event live from WPCampus 2019 in St. Louis, Missouri. <em>Workshops will not be streamed.</em></p>
+				<p>Return to this page during the event to watch, and follow along with, the event live from WPCampus 2019 in Portland, Oregon. <em>Workshops will not be streamed.</em></p>
 			</div>
 			<?php
 		endif;*/
