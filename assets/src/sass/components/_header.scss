@@ -76,20 +76,6 @@ html.wpc-menu-open body {
 		display: none;
 	}
 
-	&:before {
-		content: '';
-		background: url('../../images/wpcampus-2019-skyline.png') left -12px no-repeat;
-		background-size: auto 118%;
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 100%;
-		height: 100%;
-		opacity: 0.15;
-		z-index: -1;
-		pointer-events: none;
-	}
-
 	.wpc-toggle-menu {
 		display: block;
 		background: darken( $wpc-royal-blue, 10% );
