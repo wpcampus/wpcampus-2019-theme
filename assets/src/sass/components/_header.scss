@@ -371,6 +371,7 @@ html.wpc-menu-open body {
 #wpc-header-actions {
 	background: $wpc-dark-blue;
 	padding: 5px;
+	max-height: $actions-height;
 
 	a {
 		text-decoration: none;

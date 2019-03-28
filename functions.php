@@ -41,6 +41,15 @@ function wpcampus_2019_setup_theme_parts() {
 	if ( is_page_template( 'template-livestream.php' ) ) {
 		remove_action( 'wpc_add_before_content', 'wpcampus_parent_print_breadcrumbs', 15 );
 	}
+
+	// Move notifications on the home page.
+	// Print network notifications.
+	if ( function_exists( 'wpcampus_print_network_notifications' ) ) {
+
+		if ( is_front_page() ) {
+			remove_action( 'wpc_add_before_main', 'wpcampus_print_network_notifications' );
+		}
+	}
 }
 add_action( 'wp', 'wpcampus_2019_setup_theme_parts', 10 );
 

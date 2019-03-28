@@ -7,6 +7,8 @@ $wpc-gray-transp: rgba(0,0,0,0.05);
 $wpc-green-transp: rgba( $wpc-green, 0.1 );
 //$link-color: $wpc-royal-blue;
 
+$wpc-2019-blue: #347dc8;
+
 // FONTS
 //$open_sans: 'Open Sans', sans-serif;
 
@@ -31,8 +33,11 @@ $element-margin-vert: 1.5rem;
 // LISTS
 //$list-margin-side: 2.4rem;
 
+// Banner
+$banner-height: 40px;
+
 // Header
-$header-bg: $wpc-royal-blue;
+$header-bg: $wpc-2019-blue;
 $header-color: #fff;
 $header-logo-container-width: 315px;
 $header-logo-container-padding-horiz: 20px;
@@ -56,3 +61,11 @@ $wpc-toggle-bar-bg: #fff;
 $wpc-toggle-bar-width: 25px;
 $wpc-toggle-bar-height: 5px;
 $wpc-toggle-bar-total-width: $wpc-toggle-bar-width + 10px;
+
+$header-height: $header-logo-height + ( $header-padding-vert * 2 );
+
+// Actions
+$actions-height: 50px;
+
+// Hero
+$hero-top: $banner-height + $header-height + $actions-height;

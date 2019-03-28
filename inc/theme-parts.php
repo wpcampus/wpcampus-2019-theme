@@ -82,6 +82,33 @@ function wpcampus_2019_print_header_action() {
 }
 add_action( 'wpc_add_before_body', 'wpcampus_2019_print_header_action', 1 );
 
+/**
+ * Add header action button(s).
+ */
+function wpcampus_2019_print_hero() {
+
+	$is_front_page = is_front_page();
+
+	if ( ! $is_front_page ) {
+		return;
+	}
+
+	// @TODO add description for image.
+	?>
+	<div role="presentation" id="wpc-home-hero">
+		<p class="for-screen-reader">Portland, Oregon is a beautiful city.</p>
+		<?php
+
+		if ( function_exists( 'wpcampus_print_network_notifications' ) ) {
+			wpcampus_print_network_notifications();
+		}
+
+		?>
+	</div>
+	<?php
+}
+add_action( 'wpc_add_before_body', 'wpcampus_2019_print_hero', 2 );
+
 function wpcampus_2019_filter_breadcrumbs( $crumbs ) {
 
 	$is_feedback = is_page( 'feedback' );
