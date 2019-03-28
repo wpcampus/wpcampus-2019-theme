@@ -37,7 +37,7 @@ gulp.task('sass', function() {
 			suffix: '.min'
 		}))
 		.pipe(gulp.dest(dest.sass))
-		.pipe(notify('WPC 2018 SASS compiled'));
+		.pipe(notify('WPC 2019 SASS compiled'));
 });
 
 // Take care of JS.
@@ -51,7 +51,7 @@ gulp.task('js',function() {
 			}
 		}))
 		.pipe(gulp.dest(dest.js))
-		.pipe(notify('WPC 2018 JS compiled'));
+		.pipe(notify('WPC 2019 JS compiled'));
 });
 
 // Compile all the things.

@@ -1,6 +1,6 @@
-# WPCampus 2018 - WordPress Theme
+# WPCampus 2019 - WordPress Theme
 
-This is the WordPress theme used to power the WPCampus 2018 website at [https://2018.wpcampus.org](https://2018.wpcampus.org).
+This is the WordPress theme used to power the WPCampus 2019 website at [https://2019.wpcampus.org](https://2019.wpcampus.org).
 
 ## Disclaimer
 

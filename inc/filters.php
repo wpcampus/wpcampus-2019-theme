@@ -9,7 +9,7 @@
  * @param   $depth - int - Depth of menu item. Used for padding.
  * @return  array - the filtered classes array.
  */
-function wpc_2018_filter_nav_menu_css_class( $classes, $item, $args, $depth ) {
+function wpc_2019_filter_nav_menu_css_class( $classes, $item, $args, $depth ) {
 
 	if ( 'Schedule' == $item->title ) {
 
@@ -22,4 +22,4 @@ function wpc_2018_filter_nav_menu_css_class( $classes, $item, $args, $depth ) {
 
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'wpc_2018_filter_nav_menu_css_class', 100, 4 );
+add_filter( 'nav_menu_css_class', 'wpc_2019_filter_nav_menu_css_class', 100, 4 );

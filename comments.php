@@ -25,7 +25,7 @@ if ( post_password_required() ) {
 			$comments_number = get_comments_number();
 
 			if ( '1' === $comments_number ) {
-				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'wpcampus-2018' ), get_the_title() );
+				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'wpcampus-2019' ), get_the_title() );
 			} else {
 				printf(
 					/* translators: 1: number of comments, 2: post title */
@@ -34,7 +34,7 @@ if ( post_password_required() ) {
 						'%1$s Replies to &ldquo;%2$s&rdquo;',
 						$comments_number,
 						'comments title',
-						'wpcampus-2018'
+						'wpcampus-2019'
 					),
 					number_format_i18n( $comments_number ),
 					get_the_title()
@@ -50,7 +50,7 @@ if ( post_password_required() ) {
 						'avatar_size' => 100,
 						'style'       => 'ol',
 						'short_ping'  => true,
-						'reply_text'  => __( 'Reply', 'wpcampus-2018' ), //twentyseventeen_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'twentyseventeen' ),
+						'reply_text'  => __( 'Reply', 'wpcampus-2019' ), //twentyseventeen_get_svg( array( 'icon' => 'mail-reply' ) ) . __( 'Reply', 'wpcampus-2019' ),
 					)
 				);
 			?>
@@ -59,8 +59,8 @@ if ( post_password_required() ) {
 		<?php
 		the_comments_pagination(
 			array(
-				'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'wpcampus-2018' ) . '</span>', //twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'twentyseventeen' ) . '</span>',
-				'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'twentyseventeen' ) . '</span>', // . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+				'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'wpcampus-2019' ) . '</span>', //twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous', 'wpcampus-2019' ) . '</span>',
+				'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'wpcampus-2019' ) . '</span>', // . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
 			)
 		);
 
@@ -70,7 +70,7 @@ if ( post_password_required() ) {
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'wpcampus-2018' ); ?></p>
+		<p class="no-comments"><?php _e( 'Comments are closed.', 'wpcampus-2019' ); ?></p>
 	<?php
 	endif;
 

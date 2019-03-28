@@ -1,13 +1,13 @@
 <?php
 
-// Template Name: WPCampus 2018: Sponsors
+// Template Name: WPCampus 2019: Sponsors
 
 /**
  * @TODO:
  * - setup redirect like for feedback and watch, where redirects if no info.
  */
 
-function wpc_2018_filter_feedback_page_title( $page_title ) {
+function wpc_2019_filter_feedback_page_title( $page_title ) {
 
 	// Are we in a particular room?
 	$room_slug = get_query_var( 'room' );
@@ -21,16 +21,16 @@ function wpc_2018_filter_feedback_page_title( $page_title ) {
 			// Get the room title.
 			$title = get_the_title( $room_post->ID );
 			if ( ! empty( $title ) ) {
-				return sprintf( __( 'Watch %s', 'wpcampus-2018' ), $title );
+				return sprintf( __( 'Watch %s', 'wpcampus-2019' ), $title );
 			}
 		}
 	}
 
 	return $page_title;
 }
-//add_filter( 'wpcampus_page_title', 'wpc_2018_filter_feedback_page_title' );
+//add_filter( 'wpcampus_page_title', 'wpc_2019_filter_feedback_page_title' );
 
-function wpc_2018_filter_sponsor_content( $content ) {
+function wpc_2019_filter_sponsor_content( $content ) {
 
 	if ( ! is_page( 'sponsor' ) ) {
 		return $content;
@@ -52,6 +52,6 @@ function wpc_2018_filter_sponsor_content( $content ) {
 
 	return $content;
 }
-add_filter( 'the_content', 'wpc_2018_filter_sponsor_content' );
+add_filter( 'the_content', 'wpc_2019_filter_sponsor_content' );
 
 get_template_part( 'index' );

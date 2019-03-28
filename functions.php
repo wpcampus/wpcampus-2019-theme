@@ -10,18 +10,18 @@ require_once $includes_path . 'theme-parts.php';
  * - Load the textdomain.
  * - Register the navigation menus.
  */
-function wpcampus_2018_setup_theme() {
+function wpcampus_2019_setup_theme() {
 
 	// Load the textdomain.
-	load_theme_textdomain( 'wpcampus-2018', get_stylesheet_directory() . '/languages' );
+	load_theme_textdomain( 'wpcampus-2019', get_stylesheet_directory() . '/languages' );
 
 	// Register the nav menus.
 	register_nav_menus( array(
-		'primary1' => __( 'Primary Menu 1', 'wpcampus-2018' ),
-		'primary2' => __( 'Primary Menu 2', 'wpcampus-2018' ),
+		'primary1' => __( 'Primary Menu 1', 'wpcampus-2019' ),
+		'primary2' => __( 'Primary Menu 2', 'wpcampus-2019' ),
 	));
 }
-add_action( 'after_setup_theme', 'wpcampus_2018_setup_theme', 10 );
+add_action( 'after_setup_theme', 'wpcampus_2019_setup_theme', 10 );
 
 /**
  * Modify theme components.
@@ -30,7 +30,7 @@ add_action( 'after_setup_theme', 'wpcampus_2018_setup_theme', 10 );
  * hook available after WP object is setup
  * and we can use conditional tags.
  */
-function wpcampus_2018_setup_theme_parts() {
+function wpcampus_2019_setup_theme_parts() {
 
 	// Don't print MailChimp signup on the application.
 	if ( is_page( 'call-for-speakers/application' ) ) {
@@ -42,7 +42,7 @@ function wpcampus_2018_setup_theme_parts() {
 		remove_action( 'wpc_add_before_content', 'wpcampus_parent_print_breadcrumbs', 15 );
 	}
 }
-add_action( 'wp', 'wpcampus_2018_setup_theme_parts', 10 );
+add_action( 'wp', 'wpcampus_2019_setup_theme_parts', 10 );
 
 /**
  * Make sure the Open Sans
@@ -52,17 +52,17 @@ add_action( 'wp', 'wpcampus_2018_setup_theme_parts', 10 );
  *
  * TODO: What fonts do we need?
  */
-function wpcampus_2018_load_open_sans_weights( $weights ) {
+function wpcampus_2019_load_open_sans_weights( $weights ) {
 	return array_merge( $weights, array( 300, 400, 600 ) );
 }
-add_filter( 'wpcampus_open_sans_font_weights', 'wpcampus_2018_load_open_sans_weights' );
+add_filter( 'wpcampus_open_sans_font_weights', 'wpcampus_2019_load_open_sans_weights' );
 
 /**
  * Setup/enqueue styles and scripts for theme.
  *
  * TODO: Setup
  */
-function wpcampus_2018_enqueue_theme() {
+function wpcampus_2019_enqueue_theme() {
 
 	// Set the directories.
 	$wpcampus_dir     = trailingslashit( get_stylesheet_directory_uri() );
@@ -70,26 +70,26 @@ function wpcampus_2018_enqueue_theme() {
 	$wpcampus_dir_js  = $wpcampus_dir . 'assets/build/js/';
 
 	// Enqueue the base styles and script.
-	wp_enqueue_style( 'wpcampus-2018', $wpcampus_dir_css . 'styles.min.css', array( 'wpcampus-parent' ), null );
-	//wp_enqueue_script( 'wpcampus-2018', $wpcampus_dir_js . 'wpc-2018.min.js', array( 'jquery' ), null );
+	wp_enqueue_style( 'wpcampus-2019', $wpcampus_dir_css . 'styles.min.css', array( 'wpcampus-parent' ), null );
+	//wp_enqueue_script( 'wpcampus-2019', $wpcampus_dir_js . 'wpc-2019.min.js', array( 'jquery' ), null );
 
 	// For the livestream page
-	//if ( is_page_template( 'template-livestream.php' ) && is_wpcampus_2018_in_progress() ) {
+	//if ( is_page_template( 'template-livestream.php' ) && is_wpcampus_2019_in_progress() ) {
 
 }
-add_action( 'wp_enqueue_scripts', 'wpcampus_2018_enqueue_theme', 10 );
+add_action( 'wp_enqueue_scripts', 'wpcampus_2019_enqueue_theme', 10 );
 
-function wpcampus_2018_get_current_time() {
+function wpcampus_2019_get_current_time() {
 	$timezone = get_option( 'timezone_string' ) ?: 'UTC';
-	$time = 'now'; //'2018-07-13 16:40:00';
+	$time = 'now'; //'2019-07-13 16:40:00';
 	return new DateTime( $time, new DateTimeZone( $timezone ) );
 }
 
 /**
  * Get the call for speaker deadline.
  */
-function wpcampus_2018_get_call_speaker_deadline() {
-	$deadline = get_option( 'wpc_2018_call_for_speakers_deadline' );
+function wpcampus_2019_get_call_speaker_deadline() {
+	$deadline = get_option( 'wpc_2019_call_for_speakers_deadline' );
 	if ( ! empty( $deadline ) && false !== strtotime( $deadline ) ) {
 		$timezone = get_option( 'timezone_string' ) ?: 'UTC';
 		return new DateTime( $deadline, new DateTimeZone( $timezone ) );
@@ -100,8 +100,8 @@ function wpcampus_2018_get_call_speaker_deadline() {
 /**
  * Get the call for speaker deadline.
  */
-function is_wpcampus_2018_in_progress() {
-	if ( has_wpcampus_2018_started() && ! is_wpcampus_2018_over() ) {
+function is_wpcampus_2019_in_progress() {
+	if ( has_wpcampus_2019_started() && ! is_wpcampus_2019_over() ) {
 		return true;
 	}
 	return false;
@@ -110,8 +110,8 @@ function is_wpcampus_2018_in_progress() {
 /**
  * Get the call for speaker deadline.
  */
-function has_wpcampus_2018_started() {
-	$first_day = get_option( 'wpc_2018_first_day' );
+function has_wpcampus_2019_started() {
+	$first_day = get_option( 'wpc_2019_first_day' );
 	if ( ! empty( $first_day ) && false !== strtotime( $first_day ) ) {
 
 		$timezone = get_option( 'timezone_string' ) ?: 'UTC';
@@ -119,7 +119,7 @@ function has_wpcampus_2018_started() {
 
 		$first_day = new DateTime( $first_day, $timezone );
 
-		$now = wpcampus_2018_get_current_time();
+		$now = wpcampus_2019_get_current_time();
 
 		if ( $now >= $first_day ) {
 			return true;
@@ -131,8 +131,8 @@ function has_wpcampus_2018_started() {
 /**
  * Get the call for speaker deadline.
  */
-function is_wpcampus_2018_over() {
-	$last_day = get_option( 'wpc_2018_last_day' );
+function is_wpcampus_2019_over() {
+	$last_day = get_option( 'wpc_2019_last_day' );
 	if ( ! empty( $last_day ) && false !== strtotime( $last_day ) ) {
 
 		$timezone = get_option( 'timezone_string' ) ?: 'UTC';
@@ -140,7 +140,7 @@ function is_wpcampus_2018_over() {
 
 		$last_day = new DateTime( $last_day, $timezone );
 
-		$now = wpcampus_2018_get_current_time();
+		$now = wpcampus_2019_get_current_time();
 
 		if ( $now > $last_day ) {
 			return true;
@@ -152,17 +152,17 @@ function is_wpcampus_2018_over() {
 /**
  * Add custom query vars.
  */
-function wpcampus_2018_add_query_vars( $vars ) {
+function wpcampus_2019_add_query_vars( $vars ) {
 	$vars[] = 'room';
 	$vars[] = 'session';
 	return $vars;
 }
-add_filter( 'query_vars', 'wpcampus_2018_add_query_vars' );
+add_filter( 'query_vars', 'wpcampus_2019_add_query_vars' );
 
 /**
  * Make sure the watch page is valid.
  */
-function wpcampus_2018_watch_redirect() {
+function wpcampus_2019_watch_redirect() {
 
 	// Only for the watch page.
 	if ( ! is_page( 'watch' ) ) {
@@ -221,12 +221,12 @@ function wpcampus_2018_watch_redirect() {
 	wp_safe_redirect( $watch_path, 301 );
 	exit;
 }
-add_action( 'wp', 'wpcampus_2018_watch_redirect' );
+add_action( 'wp', 'wpcampus_2019_watch_redirect' );
 
 /**
  * Add rewrite rules.
  */
-function wpcampus_2018_add_rewrite_rules() {
+function wpcampus_2019_add_rewrite_rules() {
 
 	// For full/only schedule.
 	add_rewrite_rule( '^schedule\/full\/?', 'index.php?pagename=schedule&wpc_template=schedule-only', 'top' );
@@ -240,12 +240,12 @@ function wpcampus_2018_add_rewrite_rules() {
 	add_rewrite_rule( '^feedback\/([^\/]+)\/?', 'index.php?pagename=feedback&session=$matches[1]', 'top');
 
 }
-add_action( 'init', 'wpcampus_2018_add_rewrite_rules' );
+add_action( 'init', 'wpcampus_2019_add_rewrite_rules' );
 
 /**
  * Filter the livestream URL.
  */
-function wpcampus_2018_filter_livestream_url( $livestream_url, $post ) {
+function wpcampus_2019_filter_livestream_url( $livestream_url, $post ) {
 
 	// Only for certain event types.
 	$event_type = get_post_meta( $post->ID, 'event_type', true );
@@ -271,7 +271,7 @@ function wpcampus_2018_filter_livestream_url( $livestream_url, $post ) {
 
 	return '';
 }
-add_filter( 'conf_sch_livestream_url', 'wpcampus_2018_filter_livestream_url', 100, 2 );
+add_filter( 'conf_sch_livestream_url', 'wpcampus_2019_filter_livestream_url', 100, 2 );
 
 /**
  * Filter the feedback URL.
@@ -281,7 +281,7 @@ add_filter( 'conf_sch_livestream_url', 'wpcampus_2018_filter_livestream_url', 10
  * @param   $post - object - the post information.
  * @return  string - the filtered feedback URL.
  */
-function wpcampus_2018_filter_feedback_url( $feedback_url, $post ) {
+function wpcampus_2019_filter_feedback_url( $feedback_url, $post ) {
 
 	// Only for certain event types.
 	$event_type = get_post_meta( $post->ID, 'event_type', true );
@@ -297,12 +297,12 @@ function wpcampus_2018_filter_feedback_url( $feedback_url, $post ) {
 
 	return '';
 }
-add_filter( 'conf_sch_feedback_url', 'wpcampus_2018_filter_feedback_url', 100, 2 );
+add_filter( 'conf_sch_feedback_url', 'wpcampus_2019_filter_feedback_url', 100, 2 );
 
 /**
  *
  */
-function wpcampus_2018_get_login_form( $args = array() ) {
+function wpcampus_2019_get_login_form( $args = array() ) {
 
 	$defaults = array(
 		'redirect' => ( is_ssl() ? 'https://' : 'http://' ) . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'],
@@ -329,6 +329,6 @@ function wpcampus_2018_get_login_form( $args = array() ) {
 	return '<div class="wpcampus-login-form wpcampus-login-ajax">' . wp_login_form( $args ) . '</div>';
 }
 
-function wpcampus_2018_print_login_form( $args = array() ) {
-	echo wpcampus_2018_get_login_form( $args );
+function wpcampus_2019_print_login_form( $args = array() ) {
+	echo wpcampus_2019_get_login_form( $args );
 }

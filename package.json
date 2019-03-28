@@ -1,10 +1,10 @@
 {
-  "name": "wpcampus-2018-theme",
+  "name": "wpcampus-2019-theme",
   "version": "1.0.0",
-  "description": "The WordPress theme for the WPCampus 2018 conference website.",
+  "description": "The WordPress theme for the WPCampus 2019 conference website.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wpcampus/wpcampus-2018-theme.git"
+    "url": "git+https://github.com/wpcampus/wpcampus-2019-theme.git"
   },
   "scripts": {
     "postinstall": "composer install",
@@ -16,9 +16,9 @@
   ],
   "license": "GPL-2.0+",
   "bugs": {
-    "url": "https://github.com/wpcampus/wpcampus-2018-theme/issues"
+    "url": "https://github.com/wpcampus/wpcampus-2019-theme/issues"
   },
-  "homepage": "https://github.com/wpcampus/wpcampus-2018-theme#readme",
+  "homepage": "https://github.com/wpcampus/wpcampus-2019-theme#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",

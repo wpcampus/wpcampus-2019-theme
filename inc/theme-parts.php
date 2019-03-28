@@ -3,7 +3,7 @@
 /**
  * Print menu items, used for our main menu.
  */
-function wpcampus_2018_print_menu( $menu_id, $menu_label ) {
+function wpcampus_2019_print_menu( $menu_id, $menu_label ) {
 
 	$menu = wp_nav_menu( array(
 		'echo'           => false,
@@ -21,7 +21,7 @@ function wpcampus_2018_print_menu( $menu_id, $menu_label ) {
 	}
 }
 
-function wpcampus_2018_print_header() {
+function wpcampus_2019_print_header() {
 
 	$wpcampus_dir = trailingslashit( get_stylesheet_directory_uri() );
 
@@ -33,22 +33,22 @@ function wpcampus_2018_print_header() {
 
 				if ( is_front_page() ) :
 					?>
-					<h1 class="for-screen-reader"><?php printf( __( '%1$s 2018 Conference: Where %2$s Meets Higher Education', 'wpcampus-2018' ), 'WPCampus', 'WordPress' ); ?></h1>
+					<h1 class="for-screen-reader"><?php printf( __( '%1$s 2019 Conference: Where %2$s Meets Higher Education', 'wpcampus-2019' ), 'WPCampus', 'WordPress' ); ?></h1>
 					<?php
 				endif;
 
 				?>
-				<img alt="<?php printf( esc_attr__( 'The %1$s 2018 conference, where %2$s meets higher education, will take place July 12-14, 2018 in St. Louis, Missouri.', 'wpcampus-2018' ), 'WPCampus', 'WordPress' ); ?>" src="<?php echo $wpcampus_dir; ?>assets/images/wpcampus-2018-logo.png">
+				<img alt="<?php printf( esc_attr__( 'The %1$s 2019 conference, where %2$s meets higher education, will take place July 12-14, 2019 in St. Louis, Missouri.', 'wpcampus-2019' ), 'WPCampus', 'WordPress' ); ?>" src="<?php echo $wpcampus_dir; ?>assets/images/wpcampus-2019-logo.png">
 			</a>
 		</div>
-		<button class="wpc-toggle-menu" data-toggle="wpc-header" aria-label="<?php _e( 'Toggle menu', 'wpcampus-2018' ); ?>">
+		<button class="wpc-toggle-menu" data-toggle="wpc-header" aria-label="<?php _e( 'Toggle menu', 'wpcampus-2019' ); ?>">
 			<div class="wpc-toggle-bar"></div>
-			<div class="wpc-open-menu-label"><?php _e( 'View menu', 'wpcampus-2018' ); ?></div>
+			<div class="wpc-open-menu-label"><?php _e( 'View menu', 'wpcampus-2019' ); ?></div>
 		</button>
 		<?php
 
-		wpcampus_2018_print_menu( 1, __( 'First part of primary menu', 'wpcampus-2018' ) );
-		wpcampus_2018_print_menu( 2, __( 'Second part of primary menu', 'wpcampus-2018' ) );
+		wpcampus_2019_print_menu( 1, __( 'First part of primary menu', 'wpcampus-2019' ) );
+		wpcampus_2019_print_menu( 2, __( 'Second part of primary menu', 'wpcampus-2019' ) );
 
 		if ( function_exists( 'wpcampus_print_social_media_icons' ) ) {
 			wpcampus_print_social_media_icons();
@@ -58,7 +58,7 @@ function wpcampus_2018_print_header() {
 	</div>
 	<?php
 }
-add_action( 'wpc_add_to_header', 'wpcampus_2018_print_header', 10 );
+add_action( 'wpc_add_to_header', 'wpcampus_2019_print_header', 10 );
 
 /**
  * Add header action button(s).
@@ -67,22 +67,22 @@ add_action( 'wpc_add_to_header', 'wpcampus_2018_print_header', 10 );
  * - Update so message changes as it gets closer
  * and hides/changes after deadline ends.
  */
-function wpcampus_2018_print_header_action() {
+function wpcampus_2019_print_header_action() {
 
-	//$deadline = wpcampus_2018_get_call_speaker_deadline();
+	//$deadline = wpcampus_2019_get_call_speaker_deadline();
 	//$deadline_format = 'F j, Y';
 
 	//if ( $deadline ) :
 		?>
 		<div id="wpc-header-actions" role="complementary">
-			<button class="wpc-header-action wpc-subscribe-open" title="<?php printf( esc_attr__( 'Subscribe to the %s newsletter', 'wpcampus-2018' ), "WPCampus" ); ?>"><?php printf( __( '%1$sJoin the %2$s mailing list%3$s to receive email updates about the WPCampus community and conferences.', 'wpcampus-2018' ), '<span class="underline">', 'WPCampus', '</span>' ); ?></button>
+			<button class="wpc-header-action wpc-subscribe-open" title="<?php printf( esc_attr__( 'Subscribe to the %s newsletter', 'wpcampus-2019' ), "WPCampus" ); ?>"><?php printf( __( '%1$sJoin the %2$s mailing list%3$s to receive email updates about the WPCampus community and conferences.', 'wpcampus-2019' ), '<span class="underline">', 'WPCampus', '</span>' ); ?></button>
 		</div>
 		<?php
 	//endif;
 }
-add_action( 'wpc_add_before_body', 'wpcampus_2018_print_header_action', 1 );
+add_action( 'wpc_add_before_body', 'wpcampus_2019_print_header_action', 1 );
 
-function wpcampus_2018_filter_breadcrumbs( $crumbs ) {
+function wpcampus_2019_filter_breadcrumbs( $crumbs ) {
 
 	$is_feedback = is_page( 'feedback' );
 
@@ -103,7 +103,7 @@ function wpcampus_2018_filter_breadcrumbs( $crumbs ) {
 
 				$new_crumbs[] = array(
 					'url'   => '/schedule/',
-					'label' => __( 'Schedule', 'wpcampus-2018' ),
+					'label' => __( 'Schedule', 'wpcampus-2019' ),
 				);
 
 				// Add session page.
@@ -138,7 +138,7 @@ function wpcampus_2018_filter_breadcrumbs( $crumbs ) {
 
 		// Change feedback label.
 		if ( $is_feedback ) {
-			$new_crumbs['current']['label'] = __( 'Feedback', 'wpcampus-2018' );
+			$new_crumbs['current']['label'] = __( 'Feedback', 'wpcampus-2019' );
 		}
 
 		return $new_crumbs;
@@ -151,4 +151,4 @@ function wpcampus_2018_filter_breadcrumbs( $crumbs ) {
 
 	return $crumbs;
 }
-add_filter( 'wpcampus_breadcrumbs', 'wpcampus_2018_filter_breadcrumbs' );
+add_filter( 'wpcampus_breadcrumbs', 'wpcampus_2019_filter_breadcrumbs' );
