@@ -27,7 +27,6 @@ gulp.task('sass', function(done) {
 		}).on('error', sass.logError))
 		.pipe(mergeMediaQueries())
 		.pipe(autoprefixer({
-			browsers: ['last 2 versions'],
 			cascade: false
 		}))
 		.pipe(cleanCSS({
