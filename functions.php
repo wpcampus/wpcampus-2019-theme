@@ -32,13 +32,17 @@ add_action( 'after_setup_theme', 'wpcampus_2019_setup_theme', 10 );
  */
 function wpcampus_2019_setup_theme_parts() {
 
-	// Don't print MailChimp signup on the application.
-	if ( is_page( 'call-for-speakers/application' ) ) {
-		remove_action( 'wpc_add_after_content', 'wpcampus_print_mailchimp_signup' );
+	$is_reg_page = is_page( 203 );
+	$is_lodging_reg_page = is_page( 396 );
+	$is_speaker_app = is_page( 'call-for-speakers/application' );
+
+	// Don't print MailChimp signup on registration or the speaker application.
+	if ( $is_speaker_app || $is_reg_page || $is_lodging_reg_page ) {
+		remove_action( 'wpc_add_after_content', 'wpcampus_print_mailchimp_signup', 1000 );
 	}
 
-	// Remove breadcrumbs on livestream page.
-	if ( is_page_template( 'template-livestream.php' ) ) {
+	// Remove breadcrumbs on specific pages.
+	if ( $is_reg_page || $is_speaker_app || is_page_template( 'template-livestream.php' ) ) {
 		remove_action( 'wpc_add_before_content', 'wpcampus_parent_print_breadcrumbs', 15 );
 	}
 
@@ -48,6 +52,7 @@ function wpcampus_2019_setup_theme_parts() {
 
 		if ( is_front_page() ) {
 			remove_action( 'wpc_add_before_main', 'wpcampus_print_network_notifications' );
+			//add_action( 'wpc_add_before_body', 'wpcampus_print_network_notifications', 1 );
 		}
 	}
 }

@@ -80,7 +80,7 @@ function wpcampus_2019_print_header_action() {
 		<?php
 	//endif;
 }
-add_action( 'wpc_add_before_body', 'wpcampus_2019_print_header_action', 1 );
+//add_action( 'wpc_add_before_body', 'wpcampus_2019_print_header_action', 1 );
 
 /**
  * Add header action button(s).

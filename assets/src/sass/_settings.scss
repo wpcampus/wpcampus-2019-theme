@@ -68,4 +68,4 @@ $header-height: $header-logo-height + ( $header-padding-vert * 2 );
 $actions-height: 50px;
 
 // Hero
-$hero-top: $banner-height + $header-height + $actions-height;
+$hero-top: $banner-height + $header-height; // + $actions-height;

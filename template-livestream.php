@@ -208,7 +208,7 @@ function wpc_online_end_watch_container() {
 function wpc_online_print_watch_pre_message() {
 	?>
 	<div class="wpc-watch-container">
-		<p><strong>WPCampus Online 2019 has come to an end.</strong> If you want to chat about the event, <a href="https://wpcampus.org/get-involved/">join us in Slack</a> in our #wpconline channel. If you want to interact on social media, use <a href="https://twitter.com/search?q=wpcampus">the #WPCampus hashtag</a>.</p>
+		<p><strong>WPCampus 2019 has come to an end.</strong> If you want to chat about the event, <a href="https://wpcampus.org/get-involved/">join us in Slack</a> in our #wpconline channel. If you want to interact on social media, use <a href="https://twitter.com/search?q=wpcampus">the #WPCampus hashtag</a>.</p>
 		<div class="panel light-royal-blue center"><strong><a href="/thank-you/">Thank you</a></strong> to all of our wonderful volunteers, speakers, and attendees for their time and beautiful brains.</div>
 	</div>
 	<?php
